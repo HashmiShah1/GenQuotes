@@ -1,38 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Mukta", sans-serif; /* ye google font sy use kia hy font */
+    font-family: "Mukta", sans-serif; /* Google font */
 }
 
-.container{
+.container {
     width: 100%;
     height: 100vh;
     background: linear-gradient(135deg, rgb(0, 255, 191), rgb(0, 102, 255));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-.quote-box{
+.quote-box {
     background: #fff;
-    width: 700px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 700px;
     padding: 40px;
     border-radius: 1rem;
     text-align: center;
     box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
 }
 
-.quote-box h2{
+.quote-box h2 {
     font-size: 2rem;
     margin-bottom: 40px;
     position: relative;
 }
 
-.quote-box h2::after{
+.quote-box h2::after {
     content: '';
     width: 6rem;
     height: 3px;
@@ -44,23 +45,24 @@
     transform: translateX(-50%);
 }
 
-.quote-box blockquote{
+.quote-box blockquote {
     font-size: 26px;
     min-height: 110px;
+    margin: 0;
 }
 
-.quote-box blockquote::before,.quote-box blockquote::after{
-    content: '"';/* "" semi colon dala ta k quote is k andr ay*/
+.quote-box blockquote::before, .quote-box blockquote::after {
+    content: '"'; /* Quotation marks */
 }
 
-.quote-box span{
+.quote-box span {
     display: block;
     margin-top: 10px;
     float: right;
     position: relative;
 }
 
-.quote-box span::before{
+.quote-box span::before {
     content: '';
     width: 20px;
     height: 2px;
@@ -70,14 +72,15 @@
     left: -30px;
 }
 
-.quote-box div{
+.quote-box div {
     width: 100%;
     margin-top: 50px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-.quote-box button{
+.quote-box button {
     background: rgb(23, 124, 229);
     color: #fff;
     border-radius: 24px;
@@ -89,14 +92,41 @@
     justify-content: center;
     margin: 5px;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
-.quote-box button:nth-child(2){
+.quote-box button:nth-child(2) {
     background: transparent;
     color: #333;
 }
 
-.quote-box button img{
+.quote-box button img {
     width: 20px;
     margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .quote-box {
+        padding: 20px;
+    }
+
+    .quote-box h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .quote-box blockquote {
+        font-size: 20px;
+    }
+
+    .quote-box button {
+        width: 100%;
+        max-width: 200px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .quote-box div {
+        margin-top: 20px;
+    }
 }
